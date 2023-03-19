@@ -1,0 +1,23 @@
+<header>
+
+    <mat-grid-list cols="12" rowHeight="45px" cols="12" [ngStyle]="{'background': 'rgb(123,31,255)'}">
+
+        <mat-grid-tile colspan="1">
+        <a routerLink="/home" title="Home"><mat-icon class="icon">movie_creation</mat-icon></a>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="5">
+            <p [ngStyle]="{'font-size': '19px','color': 'rgb(255,255,255)', 'margin': '1px'}">Welcome {{user}}!</p>
+        </mat-grid-tile>
+        
+        <mat-grid-tile colspan="3">
+            <a routerLink="/home/update-create/0" title="Add review"><mat-icon class="icon">add_circle</mat-icon></a>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="3">   
+            <a routerLink="" title="Log out" (click)="logOut()"><mat-icon class="icon">input</mat-icon></a>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+</header>

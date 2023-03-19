@@ -1,0 +1,46 @@
+<app-header/>
+
+<mat-grid-list cols="12" rowHeight="95%">
+  
+      <mat-grid-tile colspan="12">
+        
+        <div [ngStyle]="{'word-wrap': 'break-word','width': '100%'}"> 
+        <h1 [ngStyle]="{'font-size': '50px','font-weight': '500', 'text-align': 'center','margin-top': '-45px'}" >{{review.title}}</h1>
+        <h2 [ngStyle]="{'text-align': 'center', 'color':'rgb(150,150,150)'}">{{review.name}}</h2>  
+        
+        <div > 
+        <div [ngStyle]="{'display': 'flex','justify-content': 'center'}">
+          
+          <div class="img" [ngStyle]="{'position': 'relative','width': '540px','max-height': '625px'}">
+            <img class="adapt" src='http://localhost:4000/api/{{review.id}}-image.{{review.type}}' alt="">
+          
+            <a *ngIf="id == review.user" routerLink='../../../home/update-create/{{routeParam}}'><mat-icon class="card" title="edit" [ngStyle]="{'position': 'absolute','font-size': '37px','width': '40px','height': '40px','left':'10px', 'top': '15px','background': 'rgb(255,255,255)','border-radius': '50%','border':'rgb(0,0,0) solid 1px','color': 'rgb(0,0,0)'}">create</mat-icon></a>
+        
+            <mat-icon *ngIf="id == review.user" (click)="delet()" class="card" title="delete" [ngStyle]="{'position': 'absolute','font-size': '40px','width': '40px','height': '40px','left':'10px', 'bottom': '15px','background': 'rgb(255,25,0)','border-radius': '50%','color': 'rgb(255,255,255)','border':'rgb(0,0,0) solid 1px'}">delete</mat-icon>
+          </div> 
+      
+
+        </div>
+        
+        
+        </div>
+          <div [ngStyle]="{'display': 'flex', 'justify-content': 'center'}">
+            <p class="details-p" [ngStyle]="{'display': 'block','font-size': '16px','border-bottom': '3px solid rgb(123,31,255)','padding-top': '15px','padding-bottom': '15px','width': '500px'}">{{review.des}}</p>
+          </div>  
+        </div>   
+ 
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+
+    <mat-grid-list *ngIf="destroy !== 1" cols="12" rowHeight="500px" [ngStyle]="{'margin-top': '-35px'}" >
+  
+        <mat-grid-tile *ngFor=" let stat of List" colspan={{cols}} >  
+          <app-review *ngIf="stat.id != routeParam" title={{stat.title}} des={{stat.des}} img='http://localhost:4000/api/{{stat.id}}-image.png' id={{stat.id}}/>
+        </mat-grid-tile>
+
+        
+    
+      </mat-grid-list>
+

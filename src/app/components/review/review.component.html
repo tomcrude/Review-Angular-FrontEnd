@@ -1,0 +1,8 @@
+<mat-card title={{title}} (click)="click()" class="card" [ngStyle]="{'max-width': '400px','max-height': '500px','background': 'rgb(123,31,255)', 'color': 'white'}">
+    <mat-card-header>
+      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-subtitle>{{des}}...</mat-card-subtitle>
+    </mat-card-header>
+    <div [ngStyle]="{'width': '400px','height': '300px'}"><img class="adapt" mat-card-image src={{img}} alt={{title}} ></div>
+
+  </mat-card>

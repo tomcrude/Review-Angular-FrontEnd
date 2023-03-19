@@ -1,0 +1,20 @@
+
+<mat-grid-list cols="12" rowHeight="40vh" >
+
+    <a mat-fab routerLink="/" title="movie icon" [ngStyle]="{'margin': '10px','z-index': '10'}"><mat-icon [ngStyle]="{'font-size': '30px','width': '30px','height': '30px'}" >movie_creation</mat-icon></a>
+  
+      <mat-grid-tile colspan="12">
+        <h1 class="title" [ngStyle]="{'font-size': '67px', 'text-align': 'center','transform': 'translateY(80px)'}">Welcome To Movies Review</h1>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="12" [ngStyle]="{'margin-top': '-200px'}">
+        <a routerLink="/signUp" type="submit" mat-fab extended color="primary" [ngStyle]="{'background': 'rgb(123,31,255)','margin-right': '40px'}">Sign up</a>
+        <a routerLink="/logIn" type="submit" mat-fab extended color="primary" [ngStyle]="{'background': 'rgb(123,31,255)'}">Log in</a>
+
+      </mat-grid-tile>
+  
+    
+  
+    </mat-grid-list>
+
+    <app-footer/>

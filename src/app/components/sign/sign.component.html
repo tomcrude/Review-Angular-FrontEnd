@@ -1,0 +1,51 @@
+<mat-grid-list cols="12" rowHeight="100vh">
+
+  <a mat-fab routerLink="/" title="movie icon" [ngStyle]="{'margin': '10px'}"><mat-icon [ngStyle]="{'font-size': '30px','width': '30px','height': '30px', 'z-index': '10'}" >movie_creation</mat-icon></a>
+
+    <mat-grid-tile colspan={{cols}}>
+
+        <div [ngStyle]="{'margin-bottom': '200px','width': '55%','text-align': 'center'}">
+        <h1 class="title" [ngStyle]="{'font-size': '67px','text-align': 'center','padding-bottom': '65px'}">{{title}}</h1>
+
+        <form (submit)="send()" [ngStyle]="{'border-top': '2px solid rgb(220,220,220)','padding-top': '15px'}">
+        <mat-form-field [ngStyle]="{'display': 'block'}"> 
+            <mat-label>Username</mat-label>
+            <input [(ngModel)]="user.name" required name="username" type="text" matInput>
+          </mat-form-field>
+
+          <mat-form-field [ngStyle]="{'display': 'block'}"> 
+            <mat-label>Password</mat-label>
+            <input [(ngModel)]="user.pass"  required name="password"type="password" matInput>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="title !== 'Log in'" [ngStyle]="{'display': 'block'}"> 
+            <mat-label>Repeat Password</mat-label>
+            <input [(ngModel)]="repeatPass" required name="repeat Password" type="password" matInput>
+          </mat-form-field>
+
+          <p [ngStyle]="{'font-weight': '600','color': 'rgb(255,70,5)'}">{{message}}</p>
+
+          <button type="submit" mat-fab extended color="primary" [ngStyle]="{'width': '45%','background': 'rgb(123,31,255)','margin-top': '20px'}">{{button1}}</button>
+
+        </form>
+
+    </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngIf='screen > 1000' colspan="4" [ngStyle]="{'background': 'rgb(123,31,255)','color': 'rgb(255,255,255)','text-align': 'center','positon': 'relative'}">
+        <div [ngStyle]="{'margin-bottom': '200px'}">
+            <h2 id="title2" [ngStyle]="{'font-size': '60px','margin-bottom': '40px','z-index': '100'}">{{title2}}</h2>
+
+            <a routerLink={{link}} mat-fab extended [ngStyle]="{'background': 'rgb(255,255,255)','width': '80%','z-index': '100'}" >{{button2}}</a>
+
+            <div class="figure" [ngStyle]="{'top': '650px','right': '-125px'}"></div>
+
+            <div class="figure" [ngStyle]="{'top': '100px', 'left': '55px','width': '100px', 'height': '100px'}"></div>
+
+            <div class="figure"></div>
+
+        </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>

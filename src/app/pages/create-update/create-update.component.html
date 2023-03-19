@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<mat-grid-list cols="12" rowHeight="75vh">
+
+
+      <mat-grid-tile colspan="12">
+  
+          <div [ngStyle]="{'width': '350px','text-align': 'center'}">
+
+          <h1 [ngStyle]="{'font-size': '67px','padding-bottom': '35px'}">{{title}}</h1>
+  
+          <form (submit)="uploadEdit()" [ngStyle]="{'border-top': '2px solid rgb(220,220,220)','padding-top': '18px'}">
+            
+            <div [ngStyle]="{'margin-bottom': '25px'}"> 
+              <input (change)="img($event)" type="file" [ngStyle]="{'font-size': '14.5px','height': '35px'}">
+            </div>
+          
+            <mat-form-field [ngStyle]="{'display': 'block'}"> 
+              <mat-label>Title</mat-label>
+              <input [(ngModel)]="review.title" required name="title" type="text" matInput>
+            </mat-form-field>
+  
+            <mat-form-field [ngStyle]="{'display': 'block'}"> 
+                <mat-label>Description</mat-label>
+                <textarea [ngModelOptions]="{standalone: true}" [(ngModel)]="review.des" matInput placeholder="Description" rows="2" ></textarea>
+            </mat-form-field>
+
+            <div *ngIf="message === '' && request === true" [ngStyle]="{'display': 'flex','width': '100%','justify-content': 'center'}"><div class="loader"></div></div>
+
+            <p [ngStyle]="{'font-weight': '600','color': 'rgb(255,70,5)'}">{{message}}</p>
+
+            <button type="submit" mat-fab extended color="primary" [ngStyle]="{'width': '45%','background': 'rgb(123,31,255)','margin-top': '20px'}">{{button}}</button>
+
+          </form>
+       
+      </div>
+  
+      </mat-grid-tile>
+  
+  
+    </mat-grid-list>
+  

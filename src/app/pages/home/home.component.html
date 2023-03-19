@@ -1,0 +1,13 @@
+<app-header/>
+
+<mat-grid-list cols="12" rowHeight="510px" cols="12" >
+
+
+    <mat-grid-tile *ngFor=" let stat of list" colspan={{cols}}>
+        <app-review id={{stat[0]}} title={{stat[1]}} des={{stat[2].slice(0,20)}} img='http://localhost:4000/api/{{stat[0]}}-image.png'></app-review>
+    </mat-grid-tile>
+    
+</mat-grid-list>
+
+
+
