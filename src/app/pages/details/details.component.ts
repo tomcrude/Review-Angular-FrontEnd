@@ -67,9 +67,9 @@ export class DetailsComponent {
       next: (res:any) => {
         this.review = res;this.review.type = "png"; this.service.getUserReviews(this.review.user, this.routeParam).pipe(takeUntil(this.onDestroy$)).subscribe({
         next: (res:any) => {this.List = res; if(this.List == null){this.destroy = 1}},
-        error: (e:any) => console.log(e)
+        error: (e:any) => {if (e){this.router.navigate(["../home"])}
       })},
-      error: (e:any) => console.log(e)
+      error: (e:any) => {if (e){this.router.navigate(["../home"])}}
     })
   }
 
