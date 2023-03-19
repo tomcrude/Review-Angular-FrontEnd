@@ -37,9 +37,10 @@ export class CreateUpdateComponent {
     if (this.routeParam != 0){
       this.title = "edit"
       this.button = "Save"
+     
 
       this.service.getSingleReview(this.routeParam).pipe(takeUntil(this.onDestroy$)).subscribe({
-        next: (res:any) => {console.log(res);this.review = res; if (res.user != this.id){this.router.navigate(["../home"])}},
+        next: (res:any) => {this.review = res; if (res.user != this.id){this.router.navigate(["../home"])}},
         error: (e:any) => console.log(e)
       })
     }

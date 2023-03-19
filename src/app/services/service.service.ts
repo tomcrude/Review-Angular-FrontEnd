@@ -9,7 +9,7 @@ export class Service {
 
   constructor(private http:HttpClient) {}
 
-  url:string = "http://localhost:4000/api"
+  url:string = "https://review-spring-boot-backend-production.up.railway.app/api"
   
   test(){
     return this.http.get(`${this.url}/tete`)

@@ -12,7 +12,7 @@
         <div [ngStyle]="{'display': 'flex','justify-content': 'center'}">
           
           <div class="img" [ngStyle]="{'position': 'relative','width': '540px','max-height': '625px'}">
-            <img class="adapt" src='http://localhost:4000/api/{{review.id}}-image.{{review.type}}' alt="">
+            <img class="adapt" src='https://review-spring-boot-backend-production.up.railway.app/api/{{review.id}}-image.{{review.type}}' alt="">
           
             <a *ngIf="id == review.user" routerLink='../../../home/update-create/{{routeParam}}'><mat-icon class="card" title="edit" [ngStyle]="{'position': 'absolute','font-size': '37px','width': '40px','height': '40px','left':'10px', 'top': '15px','background': 'rgb(255,255,255)','border-radius': '50%','border':'rgb(0,0,0) solid 1px','color': 'rgb(0,0,0)'}">create</mat-icon></a>
         
@@ -37,7 +37,7 @@
     <mat-grid-list *ngIf="destroy !== 1" cols="12" rowHeight="500px" [ngStyle]="{'margin-top': '-35px'}" >
   
         <mat-grid-tile *ngFor=" let stat of List" colspan={{cols}} >  
-          <app-review *ngIf="stat.id != routeParam" title={{stat.title}} des={{stat.des}} img='http://localhost:4000/api/{{stat.id}}-image.png' id={{stat.id}}/>
+          <app-review *ngIf="stat.id != routeParam" title={{stat.title}} des={{stat.des}} img='https://review-spring-boot-backend-production.up.railway.app/api/{{stat.id}}-image.png' id={{stat.id}}/>
         </mat-grid-tile>
 
         
